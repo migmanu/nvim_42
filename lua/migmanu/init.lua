@@ -1,2 +1,4 @@
+require("migmanu.packer")
 require("migmanu.remap")
-print("Hello from me")
+require("migmanu.set")
+print("Have fun! Ya somos campeones del Mundo...")
