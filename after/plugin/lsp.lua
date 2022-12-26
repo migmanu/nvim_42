@@ -7,6 +7,7 @@ lsp.ensure_installed({
   'tsserver',
   'eslint',
   'sumneko_lua',
+  'emmet_ls',
 })
 
 lsp.nvim_workspace()

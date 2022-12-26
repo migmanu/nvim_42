@@ -11,7 +11,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- no line wraps
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 --improve undotree plugin acces to undos
 vim.opt.swapfile = false

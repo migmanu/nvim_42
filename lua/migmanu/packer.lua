@@ -8,8 +8,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
  
   -- dracula theme
-  -- Using Packer:
-  use 'Mofiqul/dracula.nvim'
+  use ('Mofiqul/dracula.nvim')
 
   --telescope
   use {
@@ -18,14 +17,11 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  --rose-pine
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+  --autopairs
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 
   --treesitter
   use {
@@ -33,7 +29,7 @@ return require('packer').startup(function(use)
 	  run = ':TSUpdate'
     }
 
-  -- trewsitter playground
+  -- treesitter playground
   use('nvim-treesitter/playground')
 
   -- harpoon
@@ -50,6 +46,9 @@ return require('packer').startup(function(use)
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+  --nvm-web-icons
+  use 'nvim-tree/nvim-web-devicons'
 
   --lsp-zero
   use {
