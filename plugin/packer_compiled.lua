@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/migmanu/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["dracula.nvim"] = {
-    loaded = true,
-    path = "/home/migmanu/.local/share/nvim/site/pack/packer/start/dracula.nvim",
-    url = "https://github.com/Mofiqul/dracula.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/migmanu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -165,6 +160,11 @@ _G.packer_plugins = {
     path = "/home/migmanu/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/home/migmanu/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/migmanu/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -194,6 +194,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/migmanu/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/migmanu/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

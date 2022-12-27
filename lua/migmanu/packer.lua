@@ -8,7 +8,10 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
  
   -- dracula theme
-  use ('Mofiqul/dracula.nvim')
+  -- use ('Mofiqul/dracula.nvim')
+
+  -- one dark pro theme
+  use "olimorris/onedarkpro.nvim"
 
   --telescope
   use {
@@ -49,6 +52,9 @@ return require('packer').startup(function(use)
 
   --nvm-web-icons
   use 'nvim-tree/nvim-web-devicons'
+
+  -- nvim which-key
+  use 'folke/which-key.nvim'
 
   --lsp-zero
   use {
