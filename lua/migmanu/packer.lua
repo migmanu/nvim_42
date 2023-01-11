@@ -53,6 +53,11 @@ return require('packer').startup(function(use)
   --nvm-web-icons
   use 'nvim-tree/nvim-web-devicons'
 
+  --indent-blanckline
+  require("packer").startup(function()
+        use "lukas-reineke/indent-blankline.nvim"
+    end)
+
   -- nvim which-key
   use 'folke/which-key.nvim'
 

@@ -14,3 +14,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 --replace current selected word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+
+--use CTRL + l to move cursor right in insert mode
+vim.keymap.set("i", "<C-l>", "<right>")
