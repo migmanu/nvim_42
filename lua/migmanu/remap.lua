@@ -17,3 +17,15 @@ vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 --use CTRL + l to move cursor right in insert mode
 vim.keymap.set("i", "<C-l>", "<right>")
+
+
+-- trouble keymaps
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xr", "<cmd>TroubleToggle lsp_references<cr>",
+  {silent = true, noremap = true}
+)
