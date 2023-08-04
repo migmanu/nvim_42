@@ -7,6 +7,9 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- 42 Stdheader
+    use 'https://github.com/42Paris/42header'
+
     --telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -14,28 +17,14 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    -- one dark pro theme
+    -- theme
     use "olimorris/onedarkpro.nvim"
-
+	use "ellisonleao/gruvbox.nvim"
+	use "folke/tokyonight.nvim"
     --treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
-    }
-
-    --autopairs
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-
-    use {
-        "windwp/nvim-ts-autotag",
-        wants = "nvim-treesitter",
-        event = "InsertEnter",
-        config = function()
-            require("nvim-ts-autotag").setup { enable = true }
-        end,
     }
 
     -- harpoon
@@ -43,9 +32,6 @@ return require('packer').startup(function(use)
 
     --undotree
     use('https://github.com/mbbill/undotree')
-
-    --fugitive
-    use('https://github.com/tpope/vim-fugitive')
 
     -- lualine
     use {
@@ -55,41 +41,6 @@ return require('packer').startup(function(use)
 
     --nvm-web-icons
     use 'nvim-tree/nvim-web-devicons'
-
-    --indent-blanklien
-    use 'lukas-reineke/indent-blankline.nvim'
-
-    --nvim-commaround
-    use 'gennaro-tedesco/nvim-commaround'
-
-    --lsp-zero
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        requires = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
-
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
-
-            -- Snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
-        }
-    }
-
-    --icons for lsp completions
-    use 'onsails/lspkind.nvim'
-
-    --codicons
-    use 'mortepau/codicons.nvim'
 
     --trouble [diagnosis]
     use {
@@ -102,6 +53,15 @@ return require('packer').startup(function(use)
                 -- refer to the configuration section below
             }
         end
+    }
+
+	--autopairs
+    use {
+        "windwp/nvim-autopairs",
+        config = function()
+			require("nvim-autopairs").setup {
+			} 
+		end
     }
 
     --lsp-colors
@@ -119,6 +79,7 @@ return require('packer').startup(function(use)
     }
   end
 }
+
 
 
 end)
