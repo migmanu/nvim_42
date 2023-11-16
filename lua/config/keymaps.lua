@@ -1,0 +1,36 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+
+-- Open Explorer
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+
+--move selection
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+--center cursor in search
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+--replace current selected word
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+
+--use CTRL + h, j, k, l to move cursor right in insert mode
+vim.keymap.set("i", "<C-h>", "<left>")
+vim.keymap.set("i", "<C-j>", "<down>")
+vim.keymap.set("i", "<C-k>", "<up>")
+vim.keymap.set("i", "<C-l>", "<right>")
+
+
+-- trouble keymaps
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xr", "<cmd>TroubleToggle lsp_references<cr>",
+  {silent = true, noremap = true}
+)
