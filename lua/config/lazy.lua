@@ -214,6 +214,46 @@ require("lazy").setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+--line numbers and relative numbers
+vim.opt.nu = true
+vim.opt.relativenumber = true
+
+-- 4 space indenting
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = false
+
+vim.opt.smartindent = true
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = "menuone,noselect"
+
+-- no line wraps
+vim.opt.wrap = true
+
+--improve undotree plugin acces to undos
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+--manage search highlighting and incremental search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+-- gui colors
+vim.opt.termguicolors = true
+
+-- scrolling
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+
+vim.opt.updatetime = 50
+
+vim.opt.colorcolumn = "80"
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -231,9 +271,6 @@ vim.o.clipboard = "unnamedplus"
 -- Enable break indent
 vim.o.breakindent = true
 
--- Save undo history
-vim.o.undofile = true
-
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -244,12 +281,6 @@ vim.wo.signcolumn = "yes"
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
-
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
