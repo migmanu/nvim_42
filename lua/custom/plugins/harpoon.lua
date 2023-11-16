@@ -6,7 +6,7 @@ return {
   },
   config = true,
   keys = {
-    { "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Mark file with harpoon" },
+    { "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Mark file with harpoon" },
     { "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Go to next harpoon mark" },
     { "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "Go to next harpoon mark" },
     { "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "Go to next harpoon mark" },
