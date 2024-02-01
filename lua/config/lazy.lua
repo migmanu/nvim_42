@@ -82,10 +82,10 @@ require("lazy").setup({
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
-      }
+    }
   },
   -- Useful plugin to show you pending keybinds.
-  { "folke/which-key.nvim", opts = {} },
+  { "folke/which-key.nvim",  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
@@ -184,6 +184,12 @@ require("lazy").setup({
         end,
       },
     },
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
 
   {
