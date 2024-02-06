@@ -33,6 +33,7 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
 
+  "github/copilot.vim",
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -67,7 +68,6 @@ require("lazy").setup({
       "rafamadriz/friendly-snippets",
     },
   },
-
   -- noice.nvim
   {
     "folke/noice.nvim",
@@ -153,14 +153,6 @@ require("lazy").setup({
     },
   },
 
-  {
-    -- Add indentation guides even on blank lines
-    "lukas-reineke/indent-blankline.nvim",
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
-    main = "ibl",
-    opts = {},
-  },
 
   -- "gc" to comment visual regions/lines
   { "numToStr/Comment.nvim", opts = {} },
