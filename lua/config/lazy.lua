@@ -34,10 +34,10 @@ require("lazy").setup({
   "tpope/vim-rhubarb",
 
   {
-  "zbirenbaum/copilot-cmp",
-  config = function ()
-    require("copilot_cmp").setup()
-  end
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
   },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
