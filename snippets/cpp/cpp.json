@@ -8,7 +8,7 @@
 			"\t// Constructors and Destructors",
 			"\t${1:ClassName}(void);",
 			"\t${1:ClassName}(const ${1:ClassName} &copy);",
-			"\t~${1:ClassName}();",
+			"\t~${1:ClassName}(void);",
 			"",
 			"\t// Overloaded Operators",
 			"\t${1:ClassName} &operator=(const ${1:ClassName} &rhs);",
