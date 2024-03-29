@@ -159,6 +159,14 @@ require("lazy").setup({
     },
   },
 
+  {
+    -- prettier
+    "prettier/vim-prettier",
+  },
+
+  -- Indent blankline by lukas-reineke
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
 
   -- "gc" to comment visual regions/lines
   { "numToStr/Comment.nvim", opts = {} },
