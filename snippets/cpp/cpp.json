@@ -7,7 +7,7 @@
 			"  public:",
 			"\t// Constructors and Destructors",
 			"\t${1:ClassName}(void);",
-			"\t${1:ClassName}(const ${1:ClassName} &copy);",
+			"\t${1:ClassName}(const ${1:ClassName} &src);",
 			"\t~${1:ClassName}(void);",
 			"",
 			"\t// Overloaded Operators",
