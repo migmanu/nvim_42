@@ -159,6 +159,11 @@ require("lazy").setup({
     },
   },
 
+  -- 42 formatter
+  {
+    "cacharle/c_formatter_42.vim"
+  },
+
   {
     -- prettier
     "prettier/vim-prettier",
