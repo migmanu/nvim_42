@@ -32,7 +32,17 @@ require("lazy").setup({
   -- Git related plugins
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
+  
+  -- 42 School related plugins
+  -- 42 Header
+  "42Paris/42header",
 
+  -- 42 formatter
+  {
+    "cacharle/c_formatter_42.vim"
+  },
+
+  -- GitHub Copilot
   {
     "zbirenbaum/copilot-cmp",
     config = function()
@@ -158,11 +168,6 @@ require("lazy").setup({
         section_separators = "",
       },
     },
-  },
-
-  -- 42 formatter
-  {
-    "cacharle/c_formatter_42.vim"
   },
 
   {
