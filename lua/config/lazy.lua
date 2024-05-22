@@ -586,6 +586,13 @@ local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 luasnip.config.setup({})
 
+-- configure keys for jumping between snippet's placeholders
+vim.api.nvim_set_keymap('i', '<Tab>', '<cmd>lua require"luasnip".jump(1)<Cr>', {silent = true})
+vim.api.nvim_set_keymap('s', '<Tab>', '<cmd>lua require"luasnip".jump(1)<Cr>', {silent = true})
+vim.api.nvim_set_keymap('i', '<S-Tab>', '<cmd>lua require"luasnip".jump(-1)<Cr>', {silent = true})
+vim.api.nvim_set_keymap('s', '<S-Tab>', '<cmd>lua require"luasnip".jump(-1)<Cr>', {silent = true})
+
+
 cmp.setup({
   snippet = {
     expand = function(args)
