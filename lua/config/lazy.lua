@@ -26,13 +26,14 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
+
 require("lazy").setup({
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
-  
+
   -- 42 School related plugins
   -- 42 Header
   "42Paris/42header",
@@ -42,13 +43,18 @@ require("lazy").setup({
     "cacharle/c_formatter_42.vim"
   },
 
-  -- GitHub Copilot
   {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end
+    -- better-escape
+    "max397574/better-escape.nvim",
   },
+
+  -- GitHub Copilot
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end
+      },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -101,7 +107,7 @@ require("lazy").setup({
     }
   },
   -- Useful plugin to show you pending keybinds.
-  { "folke/which-key.nvim",  opts = {} },
+  { "folke/which-key.nvim",                opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
@@ -180,7 +186,7 @@ require("lazy").setup({
 
 
   -- "gc" to comment visual regions/lines
-  { "numToStr/Comment.nvim", opts = {} },
+  { "numToStr/Comment.nvim",               opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -315,6 +321,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*",
 })
+
+-- better-escape setup 
+require("better_escape").setup {
+    mapping = {"jj"}, -- a table with mappings to use
+    timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
+    clear_empty_lines = false, -- clear line after escaping if there is only whitespace
+    keys = "<Esc>", -- keys used for escaping, if it is a function will use the result everytime
+    -- example(recommended)
+    -- keys = function()
+    --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
+    -- end,
+}
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
@@ -587,8 +605,8 @@ require("luasnip.loaders.from_vscode").lazy_load()
 luasnip.config.setup({})
 
 -- configure keys for jumping between snippet's placeholders
-vim.api.nvim_set_keymap('i', '<C-Tab>', '<cmd>lua require"luasnip".jump(1)<Cr>', {silent = true})
-vim.api.nvim_set_keymap('i', '<S-Tab>', '<cmd>lua require"luasnip".jump(-1)<Cr>', {silent = true})
+vim.api.nvim_set_keymap('i', '<C-Tab>', '<cmd>lua require"luasnip".jump(1)<Cr>', { silent = true })
+vim.api.nvim_set_keymap('i', '<S-Tab>', '<cmd>lua require"luasnip".jump(-1)<Cr>', { silent = true })
 
 
 cmp.setup({
