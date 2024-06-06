@@ -48,14 +48,6 @@ require("lazy").setup({
     "max397574/better-escape.nvim",
   },
 
-  -- GitHub Copilot
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end
-      },
-
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -648,7 +640,6 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = {
-    { name = "copilot", group_index = 2 },
     { name = "nvim_lsp" },
     { name = "luasnip" },
   },

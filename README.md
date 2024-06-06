@@ -43,6 +43,7 @@ In here you have more than you need to get started. Some of the helpful commands
 - `leader + e` to open files menu
 - `leader ff` for file search
 - `leader + sg` search by grep
+- Use CopilotChat to help you learn!
 
 One of the best quality of life plugins installed is [harpoon](https://github.com/ThePrimeagen/harpoon). I strongly recommend you taking a look at it. Between that and file search, you might never open the file explorer again!
 
