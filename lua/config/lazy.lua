@@ -147,10 +147,10 @@ require("lazy").setup({
   {
     -- Theme inspired by Atom
     --"navarasu/onedark.nvim",
-    "maxmx03/dracula.nvim",
+    "catppuccin/nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("dracula")
+      vim.cmd.colorscheme("catppuccin-macchiato")
     end,
   },
 
