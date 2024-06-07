@@ -47,6 +47,16 @@ require("lazy").setup({
     -- better-escape
     "max397574/better-escape.nvim",
   },
+  -- CopilotChat
+  "CopilotC-Nvim/CopilotChat.nvim",
+
+  -- GitHub Copilot
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -314,16 +324,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
 })
 
--- better-escape setup 
+-- better-escape setup
 require("better_escape").setup {
-    mapping = {"jj"}, -- a table with mappings to use
-    timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
-    clear_empty_lines = false, -- clear line after escaping if there is only whitespace
-    keys = "<Esc>", -- keys used for escaping, if it is a function will use the result everytime
-    -- example(recommended)
-    -- keys = function()
-    --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
-    -- end,
+  mapping = { "jj" },         -- a table with mappings to use
+  timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
+  clear_empty_lines = false,  -- clear line after escaping if there is only whitespace
+  keys = "<Esc>",             -- keys used for escaping, if it is a function will use the result everytime
+  -- example(recommended)
+  -- keys = function()
+  --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
+  -- end,
 }
 
 -- [[ Configure Telescope ]]
@@ -640,10 +650,43 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = {
+    { name = "copilot", group_index = 2 },
     { name = "nvim_lsp" },
     { name = "luasnip" },
   },
 })
 
+-- Open Explorer
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+
+--move selection
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+--center cursor in search
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+--replace current selected word
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+
+--use CTRL + h, j, k, l to move cursor right in insert mode
+vim.keymap.set("i", "<C-h>", "<left>")
+vim.keymap.set("i", "<C-j>", "<down>")
+vim.keymap.set("i", "<C-k>", "<up>")
+vim.keymap.set("i", "<C-l>", "<right>")
+
+
+-- trouble keymaps
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xr", "<cmd>TroubleToggle lsp_references<cr>",
+  {silent = true, noremap = true}
+)
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
