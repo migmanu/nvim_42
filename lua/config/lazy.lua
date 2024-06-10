@@ -30,6 +30,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- NOTE: First, some plugins that don't require any configuration
 
+  -- FTerm
+  "numToStr/FTerm.nvim",
+
   -- Git related plugins
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
@@ -160,7 +163,7 @@ require("lazy").setup({
     "catppuccin/nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("catppuccin-macchiato")
+      vim.cmd.colorscheme("delek")
     end,
   },
 
@@ -685,5 +688,9 @@ vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
 vim.keymap.set("n", "<leader>xr", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
+
+-- FTerm keymaps
+vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
