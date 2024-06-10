@@ -164,6 +164,7 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       vim.cmd.colorscheme("delek")
+      vim.cmd("highlight MatchParen guifg=pink guibg=pink")
     end,
   },
 
