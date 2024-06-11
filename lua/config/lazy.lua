@@ -158,29 +158,13 @@ require("lazy").setup({
   },
 
   {
-    -- Theme inspired by Atom
-    -- "navarasu/onedark.nvim",
-    -- "nyoom-engineering/oxocarbon.nvim",
-    -- "catppuccin/nvim",
-    -- "folke/tokyonight.nvim",
-    -- "nyoom-engineering/oxocarbon.nvim",
-    "miikanissi/modus-themes.nvim",
-    priority = 1000,
-    config = function()
-      -- vim.opt.background = "light" -- set this to dark or light
-      vim.cmd.colorscheme("modus")
-      -- vim.cmd("highlight MatchParen guifg=pink guibg=grey")
-    end,
-  },
-
-  {
     -- Set lualine as statusline
     "nvim-lualine/lualine.nvim",
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = "onedark",
+        theme = "vscode",
         component_separators = "|",
         section_separators = "",
       },
