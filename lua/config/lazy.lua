@@ -159,12 +159,17 @@ require("lazy").setup({
 
   {
     -- Theme inspired by Atom
-    --"navarasu/onedark.nvim",
-    "catppuccin/nvim",
+    -- "navarasu/onedark.nvim",
+    -- "nyoom-engineering/oxocarbon.nvim",
+    -- "catppuccin/nvim",
+    -- "folke/tokyonight.nvim",
+    -- "nyoom-engineering/oxocarbon.nvim",
+    "miikanissi/modus-themes.nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("delek")
-      vim.cmd("highlight MatchParen guifg=pink guibg=grey")
+      -- vim.opt.background = "light" -- set this to dark or light
+      vim.cmd.colorscheme("modus")
+      -- vim.cmd("highlight MatchParen guifg=pink guibg=grey")
     end,
   },
 
@@ -679,13 +684,13 @@ vim.keymap.set("i", "<C-l>", "<right>")
 
 -- trouble keymaps
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
-  {silent = true, noremap = true}
+  { silent = true, noremap = true }
 )
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
-  {silent = true, noremap = true}
+  { silent = true, noremap = true }
 )
 vim.keymap.set("n", "<leader>xr", "<cmd>TroubleToggle lsp_references<cr>",
-  {silent = true, noremap = true}
+  { silent = true, noremap = true }
 )
 
 -- FTerm keymaps
