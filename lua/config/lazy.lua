@@ -666,6 +666,17 @@ vim.keymap.set("i", "<C-j>", "<down>")
 vim.keymap.set("i", "<C-k>", "<up>")
 vim.keymap.set("i", "<C-l>", "<right>")
 
+--use CTRL + h, j, k, l to move between buffers in normal mode
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>",
+  { silent = true, }
+)
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>",
+  { silent = true, })
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>",
+  { silent = true, })
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>",
+  { silent = true, })
+
 -- trouble keymaps
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
   { silent = true, noremap = true }
