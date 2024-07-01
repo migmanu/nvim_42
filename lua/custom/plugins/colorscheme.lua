@@ -13,7 +13,7 @@ return {
     priority = 1000,
     config = function()
       -- vim.opt.background = "light" -- set this to dark or light
-      vim.cmd.colorscheme("modus")
+      vim.cmd.colorscheme("modus_operandi")
       -- vim.cmd("highlight MatchParen guifg=pink guibg=grey")
     end,
   },
