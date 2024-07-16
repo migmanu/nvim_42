@@ -60,6 +60,12 @@ require("lazy").setup({
       require("copilot_cmp").setup()
     end
   },
+  -- rustaceanvim
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -555,9 +561,9 @@ local servers = {
   clangd = {},
   -- gopls = {},
   -- pyright = {},
-   rust_analyzer = {},
+  rust_analyzer = {},
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
     Lua = {
