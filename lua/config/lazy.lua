@@ -30,6 +30,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- NOTE: First, some plugins that don't require any configuration
 
+	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble"
+	},
+
 	-- FTerm
 	"numToStr/FTerm.nvim",
 
@@ -83,6 +89,7 @@ require("lazy").setup({
 
 			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
+
 		},
 	},
 
@@ -181,8 +188,6 @@ require("lazy").setup({
 		-- prettier
 		"prettier/vim-prettier",
 	},
-
-	{ "folke/trouble.nvim" },
 
 	-- Indent blankline by lukas-reineke
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
@@ -658,9 +663,9 @@ require("which-key").add({
 	{ "<C-j>",           ":wincmd j<CR>",                                            desc = "Move to bottom window" },
 	{ "<C-k>",           ":wincmd k<CR>",                                            desc = "Move to top window" },
 	{ "<C-l>",           ":wincmd l<CR>",                                            desc = "Move to right window" },
-	{ "<leader>xx",      "<cmd>TroubleToggle<cr>",                                   desc = "Toggle Trouble" },
-	{ "<leader>xq",      "<cmd>TroubleToggle quickfix<cr>",                          desc = "Toggle Quickfix" },
-	{ "<leader>xr",      "<cmd>TroubleToggle lsp_references<cr>",                    desc = "Toggle LSP References" },
+	{ "<leader>xx",      "<cmd>Trouble diagnostics toggle<cr>",                                   desc = "Toggle Trouble" },
+	{ "<leader>xq",      "<cmd>Trouble qflist toggle<cr>",                          desc = "Toggle Quickfix" },
+	{ "<leader>xr",      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",                    desc = "Toggle LSP References" },
 	{ "<A-i>",           '<CMD>lua require("FTerm").toggle()<CR>',                   mode = { 'n', 't' },                                      desc = "Toggle FTerm" },
 })
 
@@ -674,5 +679,5 @@ vim.api.nvim_set_keymap('i', '<C-k>', '<up>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-l>', '<right>', { noremap = true })
 
 -- move selected test in visual mode
-vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", {noremap = true})
-vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", {noremap = true})
+vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true })
+vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true })
