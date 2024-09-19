@@ -73,13 +73,14 @@ require("lazy").setup({
 		lazy = false, -- This plugin is already lazy
 	},
 
-	  {
-    'MagicDuck/grug-far.nvim',
-    config = function()
-      require('grug-far').setup({
-      });
-    end
-  },
+	-- grug for searh and replace
+	{
+		'MagicDuck/grug-far.nvim',
+		config = function()
+			require('grug-far').setup({
+			});
+		end
+	},
 
 
 	-- NOTE: This is where your plugins related to LSP can be installed.
