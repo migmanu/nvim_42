@@ -36,6 +36,9 @@ require("lazy").setup({
 		cmd = "Trouble"
 	},
 
+	-- VimWiki
+	"vimwiki/vimwiki",
+
 	-- FTerm
 	"numToStr/FTerm.nvim",
 
@@ -328,6 +331,15 @@ vim.wo.signcolumn = "yes"
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
+
+-- Disable compatibility with vi
+vim.cmd('set nocompatible')
+
+-- Enable filetype plugins
+vim.cmd('filetype plugin on')
+
+-- Enable syntax highlighting
+vim.cmd('syntax on')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
