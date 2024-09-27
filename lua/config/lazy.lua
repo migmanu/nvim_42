@@ -36,9 +36,6 @@ require("lazy").setup({
 		cmd = "Trouble"
 	},
 
-	-- VimWiki
-	"vimwiki/vimwiki",
-
 	-- FTerm
 	"numToStr/FTerm.nvim",
 
