@@ -48,9 +48,9 @@ require("lazy").setup({
 	"42Paris/42header",
 
 	-- 42 formatter
-	{
-		"cacharle/c_formatter_42.vim"
-	},
+	-- {
+	-- 	"cacharle/c_formatter_42.vim"
+	-- },
 
 	{
 		-- better-escape
@@ -539,7 +539,6 @@ local servers = {
 	clangd = {},
 	-- gopls = {},
 	-- pyright = {},
-	tsserver = {},
 	html = { filetypes = { 'html', 'twig', 'hbs' } },
 
 	lua_ls = {
