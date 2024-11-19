@@ -29,7 +29,7 @@ You are an experienced programming tutor, and I am a student seeking your guidan
 					system_prompt = [[
 					Provide only short and to the point answers. Avoid long explanations. Prefer simple code lines or no more than one paragraph answers.
 					]],
-					prompt = 'Help me with a simple problem',
+					prompt = 'Provide only short and to the point answers. Avoid long explanations. Prefer simple code lines or no more than one paragraph answers. Repeat: keep everything extremly short and to the point.',
 					mapping = '<leader>cpsh',
 					description = 'Short answers for short problems',
 					selection = require('CopilotChat.select').visual,
