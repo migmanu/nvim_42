@@ -684,6 +684,7 @@ require("which-key").add({
 
 -- these binds need to be here for them not to be overwritten
 
+vim.keymap.set({ 'n', 'v' }, '<leader>st', require('stay-centered').toggle, { desc = 'Toggle stay-centered.nvim' })
 -- move in insert mode with Control + h, j, k, l
 vim.api.nvim_set_keymap('i', '<C-h>', '<left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-j>', '<down>', { noremap = true })
