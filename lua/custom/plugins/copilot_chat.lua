@@ -21,10 +21,19 @@ You are an experienced programming tutor, and I am a student seeking your guidan
 - **Salutation**: If I haven't inputed any code nor asked any questions yet, just greet me and await for instructions
 					]],
 					prompt = 'How can I help you understand your code better?',
-					mapping = '<leader>ccmc',
+					mapping = '<leader>cpso',
 					description = 'Socratic method for code understanding',
 					selection = require('CopilotChat.select').visual,
 				},
+				Short = {
+					system_prompt = [[
+					Provide only short and to the point answers. Avoid long explanations. Prefer simple code lines or no more than one paragraph answers.
+					]],
+					prompt = 'Help me with a simple problem',
+					mapping = '<leader>cpsh',
+					description = 'Short answers for short problems',
+					selection = require('CopilotChat.select').visual,
+				}
 			},
 			mappings = {
 				complete = {
@@ -64,4 +73,3 @@ You are an experienced programming tutor, and I am a student seeking your guidan
 		-- See Commands section for default commands if you want to lazy load on them
 	},
 }
-
