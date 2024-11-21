@@ -694,3 +694,17 @@ vim.api.nvim_set_keymap('i', '<C-l>', '<right>', { noremap = true })
 -- move selected test in visual mode
 vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true })
+
+-- Toggle spellcheck in English
+vim.keymap.set('n', '<leader>sp', function()
+	vim.opt_local.spell = not vim.opt_local.spell:get()
+	vim.opt_local.spelllang = 'en_us'
+	print("Spellcheck: " .. (vim.opt_local.spell:get() and "ON" or "OFF") .. " (Language: English)")
+end, { desc = "Toggle Spellcheck (English)" })
+
+-- Toggle spellcheck in Spanish
+vim.keymap.set('n', '<leader>sps', function()
+	vim.opt_local.spell = not vim.opt_local.spell:get()
+	vim.opt_local.spelllang = 'es'
+	print("Spellcheck: " .. (vim.opt_local.spell:get() and "ON" or "OFF") .. " (Language: Spanish)")
+end, { desc = "Toggle Spellcheck (Spanish)" })
