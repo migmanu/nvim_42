@@ -36,6 +36,10 @@ require("lazy").setup({
 		cmd = "Trouble"
 	},
 
+	-- Python and Django
+	"tweekmonster/django-plus.vim",
+	"HallerPatrick/py_lsp.nvim",
+
 	-- FTerm
 	"numToStr/FTerm.nvim",
 
