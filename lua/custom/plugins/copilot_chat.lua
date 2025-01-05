@@ -1,17 +1,17 @@
 return {
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
+		branch = "main",
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
 		opts = {
 			debug = true, -- Enable debugging
-			system_prompt = 'Your name is GitHub Copilot and you are an AI assistant for developers.',
+			show_info = 'Your name is GitHub Copilot and you are an AI assistant for developers.',
 			prompts = {
 				Socrates = {
-					system_prompt = [[
+					show_info = [[
 # Identity
 You are an experienced programming tutor, and I am a student seeking your guidance to troubleshoot and understand my code better.
 
@@ -26,10 +26,11 @@ You are an experienced programming tutor, and I am a student seeking your guidan
 					selection = require('CopilotChat.select').visual,
 				},
 				Short = {
-					system_prompt = [[
+					show_info = [[
 					Provide only short and to the point answers. Avoid long explanations. Prefer simple code lines or no more than one paragraph answers.
 					]],
-					prompt = 'Provide only short and to the point answers. Avoid long explanations. Prefer simple code lines or no more than one paragraph answers. Repeat: keep everything extremly short and to the point.',
+					prompt =
+					'Provide only short and to the point answers. Avoid long explanations. Prefer simple code lines or no more than one paragraph answers. Repeat: keep everything extremly short and to the point.',
 					mapping = '<leader>cpsh',
 					description = 'Short answers for short problems',
 					selection = require('CopilotChat.select').visual,
@@ -62,10 +63,10 @@ You are an experienced programming tutor, and I am a student seeking your guidan
 				show_diff = {
 					normal = 'cgd'
 				},
-				show_system_prompt = {
+				show_info = {
 					normal = 'cgp'
 				},
-				show_user_selection = {
+				show_context = {
 					normal = 'cgs'
 				},
 			},
