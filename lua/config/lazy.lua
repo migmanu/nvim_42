@@ -263,6 +263,9 @@ require("lazy").setup({
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- highlight current line
+vim.opt.cursorline = true
+
 -- 4 space indenting
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
